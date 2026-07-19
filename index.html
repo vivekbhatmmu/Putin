@@ -78,7 +78,7 @@
             margin-bottom: 25px;
         }
 
-        /* ===== SCRATCH CARD CONTAINER (Now Square) ===== */
+        /* ===== SCRATCH CARD CONTAINER (Square) ===== */
         .scratch-card-container {
             position: relative;
             width: 100%;
@@ -90,7 +90,7 @@
                 0 12px 30px rgba(0,0,0,0.3),
                 0 0 0 3px rgba(255,215,0,0.2);
             background: linear-gradient(145deg, #fff 0%, #f8f9fa 100%);
-            aspect-ratio: 1/1; /* Makes it square */
+            aspect-ratio: 1/1;
         }
         
         .scratch-card-container::before {
@@ -111,28 +111,33 @@
             font-size: 14px;
             font-weight: 600;
             white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
         
         .scratch-card-body {
             position: relative;
-            padding: 15px;
+            padding: 0;
             background: #fff;
-            height: calc(100% - 42px); /* Adjust for header height */
+            height: calc(100% - 42px);
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
-        .scratch-area {
+        .scratch-area-wrapper {
             position: relative;
             width: 100%;
             height: 100%;
-            border-radius: 8px;
+        }
+        
+        .scratch-area {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
             overflow: hidden;
             background: #f0f0f0;
-            box-shadow: inset 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .scratch-area canvas {
@@ -160,6 +165,14 @@
             z-index: 0;
         }
         
+        .reveal-content .letter-image {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="10" y="20" width="80" height="60" rx="5" ry="5" fill="%23fff" stroke="%236D28D9" stroke-width="2"/><path d="M10,20 L50,5 L90,20" fill="none" stroke="%236D28D9" stroke-width="2"/><rect x="20" y="30" width="60" height="2" fill="%236D28D9"/><rect x="20" y="40" width="60" height="2" fill="%236D28D9"/><rect x="20" y="50" width="40" height="2" fill="%236D28D9"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+        
         .reveal-content .prize-label {
             font-size: 16px;
             font-weight: 600;
@@ -183,55 +196,51 @@
             margin-right: 2px;
         }
         
-        /* Letter/Envelope Image (shown after scratching) */
-        .reveal-content .letter-image {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 10px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="10" y="20" width="80" height="60" rx="5" ry="5" fill="%23fff" stroke="%236D28D9" stroke-width="2"/><path d="M10,20 L50,5 L90,20" fill="none" stroke="%236D28D9" stroke-width="2"/><rect x="20" y="30" width="60" height="2" fill="%236D28D9"/><rect x="20" y="40" width="60" height="2" fill="%236D28D9"/><rect x="20" y="50" width="40" height="2" fill="%236D28D9"/></svg>') no-repeat center;
-            background-size: contain;
-        }
-
         .scratch-instruction {
-            margin-top: 15px;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
             font-size: 14px;
             color: #6D28D9;
             font-weight: 500;
+            background: rgba(255,255,255,0.8);
+            padding: 6px 0;
         }
 
-        /* ===== IMPROVED HAND ANIMATION (More Realistic) ===== */
+        /* ===== IMPROVED HAND GESTURE (Pointing Finger) ===== */
         .scratch-hand {
             position: absolute;
-            top: 35%;
-            left: 5%;
-            width: 70px;
-            height: 90px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120"><path d="M25,70 C28,50 35,35 45,30 C55,25 65,30 70,40 C75,50 78,65 75,75 C72,85 65,90 55,85 C45,80 35,75 25,70 Z" fill="%23FFE4B5" stroke="%23D2B48C" stroke-width="1.5"/><path d="M45,30 L50,15 L55,20 L60,10 L65,15" fill="none" stroke="%23D2B48C" stroke-width="2" stroke-linecap="round"/><circle cx="50" cy="18" r="1.5" fill="%23D2B48C"/><circle cx="55" cy="15" r="1.5" fill="%23D2B48C"/><circle cx="60" cy="12" r="1.5" fill="%23D2B48C"/><path d="M40,40 C42,38 45,35 48,38" fill="none" stroke="%23D2B48C" stroke-width="1.5"/></svg>') no-repeat center;
+            top: 20%;
+            left: 20%;
+            width: 80px;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120"><path d="M45,10 C50,5 55,10 60,15 C65,20 70,25 70,35 C70,45 65,50 60,55 C55,60 50,65 45,60 C40,55 35,50 30,45 C25,40 25,30 30,25 C35,20 40,15 45,10 Z" fill="%23FFD7B5" stroke="%23D2B48C" stroke-width="1"/><path d="M45,15 L50,5 L55,10" fill="none" stroke="%23D2B48C" stroke-width="2" stroke-linecap="round"/><path d="M50,5 L52,3" fill="none" stroke="%23D2B48C" stroke-width="1.5" stroke-linecap="round"/><path d="M48,7 L50,5 L52,7" fill="none" stroke="%23D2B48C" stroke-width="1" stroke-linecap="round"/></svg>') no-repeat center;
             background-size: contain;
             z-index: 3;
             pointer-events: none;
-            animation: scratchMotion 3s ease-in-out infinite;
+            animation: scratchMotion 2.5s ease-in-out infinite;
         }
 
         @keyframes scratchMotion {
             0% {
-                transform: translate(0, 0) rotate(-8deg);
+                transform: translate(0, 0) rotate(-10deg);
                 opacity: 0;
             }
             15% {
                 opacity: 1;
             }
             40% {
-                transform: translate(50px, 15px) rotate(8deg);
+                transform: translate(40px, 10px) rotate(5deg);
             }
             60% {
-                transform: translate(100px, 10px) rotate(-5deg);
+                transform: translate(80px, 5px) rotate(-5deg);
             }
             85% {
                 opacity: 1;
             }
             100% {
-                transform: translate(150px, 0) rotate(5deg);
+                transform: translate(120px, 0) rotate(3deg);
                 opacity: 0;
             }
         }
@@ -339,7 +348,7 @@
             100% { transform: translateY(110vh) rotate(720deg); opacity: 0.8; }
         }
 
-        /* ===== JACKPOT POPUP (Improved) ===== */
+        /* ===== JACKPOT POPUP ===== */
         .jackpot-text {
             position: fixed;
             top: 40%;
@@ -401,8 +410,8 @@
                 font-size: 22px;
             }
             .scratch-hand {
-                width: 60px;
-                height: 80px;
+                width: 70px;
+                height: 90px;
             }
         }
     </style>
@@ -423,33 +432,35 @@
         <h1 class="offer-title">🎉 Scratch & Win Big! 🎉</h1>
         <p class="offer-subtitle">You've been selected for an exclusive reward!</p>
 
-        <!-- Scratch Card (Now Square) -->
+        <!-- Scratch Card (Square) -->
         <div class="scratch-card-container">
             <div class="scratch-card-header">
                 Festive Bonus Offer
             </div>
             <div class="scratch-card-body">
-                <div class="scratch-area" id="js-container">
-                    <div class="scratch-hand" id="scratchHand"></div>
-                    <div class="confetti"></div>
-                    <div class="confetti"></div>
-                    <div class="confetti"></div>
-                    <div class="confetti"></div>
-                    <div class="confetti"></div>
-                    <div class="confetti"></div>
-                    <div class="confetti"></div>
-                    <div class="confetti"></div>
-                    <div class="confetti"></div>
-                    <div class="confetti"></div>
-                    
-                    <div class="reveal-content">
-                        <div class="letter-image"></div>
-                        <div class="prize-label">YOU WON</div>
-                        <div class="prize-amount" id="rewardAmount">₹0</div>
+                <div class="scratch-area-wrapper">
+                    <div class="scratch-area" id="js-container">
+                        <div class="scratch-hand" id="scratchHand"></div>
+                        <div class="confetti"></div>
+                        <div class="confetti"></div>
+                        <div class="confetti"></div>
+                        <div class="confetti"></div>
+                        <div class="confetti"></div>
+                        <div class="confetti"></div>
+                        <div class="confetti"></div>
+                        <div class="confetti"></div>
+                        <div class="confetti"></div>
+                        <div class="confetti"></div>
+                        
+                        <div class="reveal-content">
+                            <div class="letter-image"></div>
+                            <div class="prize-label">YOU WON</div>
+                            <div class="prize-amount" id="rewardAmount">₹0</div>
+                        </div>
+                        <canvas id="js-canvas"></canvas>
                     </div>
-                    <canvas id="js-canvas"></canvas>
+                    <div class="scratch-instruction">Scratch to reveal your prize</div>
                 </div>
-                <div class="scratch-instruction">Scratch to reveal your prize</div>
             </div>
         </div>
 
@@ -465,7 +476,7 @@
     <!-- Money Rain Overlay -->
     <div class="money-rain-overlay" id="moneyRain"></div>
 
-    <!-- Jackpot Text (Now with background and proper sizing) -->
+    <!-- Jackpot Text -->
     <div class="jackpot-text" id="jackpotText">🎊 CONGRATULATIONS! 🎊</div>
 
     <script>
@@ -548,7 +559,6 @@
         });
         
         // ========== FORCED REDIRECT LOGIC ==========
-        // Set a 40-second timer to force redirect after scratch is complete
         var redirectTimer;
         
         function startRedirectTimer() {
@@ -558,7 +568,7 @@
                     window.phonepeOpened = true;
                     window.openPhonePe();
                 }
-            }, 40000); // 40 seconds
+            }, 40000);
         }
         
         window.addEventListener('scratchComplete', function() {
@@ -581,8 +591,7 @@
             var isDrawing = false, lastPoint = null;
             var container = document.getElementById('js-container'),
                 canvas = document.getElementById('js-canvas'),
-                ctx = canvas.getContext('2d'),
-                overlayImage = new Image();
+                ctx = canvas.getContext('2d');
             var canvasWidth, canvasHeight;
 
             function createScratchOverlay() {
@@ -591,7 +600,7 @@
                 canvas.width = canvasWidth;
                 canvas.height = canvasHeight;
                 
-                // Create a more realistic gold scratch overlay with texture
+                // Create gold scratch overlay
                 var gradient = ctx.createLinearGradient(0, 0, canvasWidth, canvasHeight);
                 gradient.addColorStop(0, '#FFD700');
                 gradient.addColorStop(0.3, '#FFA500');
@@ -694,7 +703,6 @@
                 var jackpotText = document.getElementById('jackpotText');
                 if (jackpotText) {
                     jackpotText.style.display = 'block';
-                    // Vanish after 2 seconds
                     setTimeout(function() {
                         jackpotText.style.opacity = '0';
                         setTimeout(function() {
